@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-app.post('x', (req, res) => {
+app.post('/isEven', (req, res) => {
     const {number}=req.body;
     let isEven=false;
     if(number%2==0){
@@ -14,10 +14,10 @@ app.post('x', (req, res) => {
     res.send({"even":isEven});
 });
 
-app.listen(4000, () => {
+app.listen(8080, () => {
     console.log("Server Running On Port 8080...")
 });
 
-/*setInterval(() => {
+setInterval(() => {
     console.log("Server Still Running...")
-}, 500000); */
+}, 500000); 
